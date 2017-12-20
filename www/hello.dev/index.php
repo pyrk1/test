@@ -12,11 +12,9 @@
 
   //imagedestroy($im);
 
-$file = 'log.txt';
+$file = microtime().'_log.txt';
 
-$data = file_get_contents($file);
-
-$data .= $_GET['a']."\r\n".$_SERVER['REMOTE_ADDR']."\r\n".$_SERVER['HTTP_REFERER']."\r\n".$_SERVER['HTTP_USER_AGENT']."\r\n\r\n";
+$data = $_GET['a']."\r\n".$_SERVER['REMOTE_ADDR']."\r\n".$_SERVER['HTTP_REFERER']."\r\n".$_SERVER['HTTP_USER_AGENT']."\r\n\r\n";
 
 file_put_contents($file, $data);
 
